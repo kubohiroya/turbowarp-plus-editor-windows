@@ -1,0 +1,43 @@
+{
+  "name": "@kubohiroya/turbowarp-plus-editor-windows",
+  "version": "0.1.0",
+  "description": "In-page windows, title bars and fullscreen control for TurboWarp Plus Editor",
+  "type": "module",
+  "license": "MPL-2.0",
+  "author": "Hiroya Kubo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kubohiroya/turbowarp-plus-editor-windows.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./styles.css": "./src/styles.css"
+  },
+  "files": [
+    "dist",
+    "src",
+    "tsconfig.json",
+    "README.md",
+    "README.ja.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "test": "npm run build && node --test test/*.test.ts"
+  },
+  "peerDependencies": {
+    "react": ">=16.14",
+    "react-dom": ">=16.14"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "typescript": "6.0.3"
+  }
+}
