@@ -7,3 +7,9 @@ export {WindowLayoutMenu} from './layout-menu.js';
 
 export type {WindowTitleBarProps} from './title-bar.js';
 export type {InternalWindowRequest} from './window-desktop.js';
+
+export {IconMenuButton} from './icon-menu-button.js';
+export {dialogAction, dialogActions} from './dialog-actions.js';
+
+export type {IconMenuButtonProps, IconMenuItem} from './icon-menu-button.js';
+export type {DialogAction} from './dialog-actions.js';
