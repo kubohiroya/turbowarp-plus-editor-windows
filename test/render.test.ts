@@ -3,7 +3,7 @@ import test from 'node:test';
 import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {
-    DockWindowButton, WindowDesktop, WindowLayoutMenu, WindowList, WindowTitleBar, useWindowHost
+    DockWindowButton, IconMenuButton, WindowDesktop, WindowLayoutMenu, WindowList, WindowTitleBar, useWindowHost
 } from '../dist/index.js';
 
 const render = (element: React.ReactElement) => renderToStaticMarkup(element);
@@ -43,4 +43,16 @@ test('the desktop renders its children, and the window list and host exist only 
     render(React.createElement(Probe, {record: host => { outside = host; }}));
     assert.equal(outside, undefined);
     assert.equal(render(React.createElement(WindowList)), '');
+});
+
+test('the icon menu button is labelled, closed at first and keeps the class it is given', () => {
+    const markup = render(React.createElement(IconMenuButton, {
+        label: 'Layout', icon: React.createElement('svg'), className: 'host-menu',
+        items: [{id: 'one', label: 'One'}]
+    }));
+    assert.match(markup, /class="tw-icon-menu host-menu"/);
+    assert.match(markup, /aria-label="Layout"/);
+    assert.match(markup, /aria-haspopup="menu"/);
+    assert.match(markup, /aria-expanded="false"/);
+    assert.doesNotMatch(markup, /role="menu"/);
 });

@@ -1,7 +1,7 @@
 {
   "name": "@kubohiroya/turbowarp-plus-editor-windows",
-  "version": "0.1.0",
-  "description": "In-page windows, title bars and fullscreen control for TurboWarp Plus Editor",
+  "version": "0.2.0",
+  "description": "In-page windows, title bars, menus, dialog actions, external surfaces and transfers for TurboWarp Plus Editor",
   "type": "module",
   "license": "MPL-2.0",
   "author": "Hiroya Kubo",
@@ -13,6 +13,14 @@
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./surfaces": {
+      "types": "./dist/surfaces.d.ts",
+      "default": "./dist/surfaces.js"
+    },
+    "./transfer": {
+      "types": "./dist/transfer.d.ts",
+      "default": "./dist/transfer.js"
     },
     "./styles.css": "./src/styles.css"
   },
