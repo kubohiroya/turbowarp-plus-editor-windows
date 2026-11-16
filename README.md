@@ -24,6 +24,7 @@ Windows that float inside the TurboWarp Plus Editor page, their title bars, and 
 | --- | --- |
 | `./surfaces` | Moves content from its dock to another surface, such as a separate window, through docked, opening and external states. The dock stays until the surface is ready, and the content returns on disconnection or error. It also records surfaces for recovery and collects edits not yet applied. It does not depend on the browser, Electron or the GUI |
 | `./transfer` | Makes a reference for a copy between windows, checks its kind, version, session, transfer ID and expiry, and applies it once. The reference never carries the data itself or a URL to read it from |
+| `./opener-document` | `connectOpenerDocument(child, {opener, mirrorNewStyles})` connects a document in another window to the editor document that renders into it. Mouse and touch input there is repeated on the editor document, React 16 listens there for every event, a context menu opened there is shown there while it is open, canvases created there pass the editor's `instanceof HTMLCanvasElement`, and, when asked, styles the editor adds later are copied. It returns a function that disconnects |
 
 Labels are in English, or in Japanese when `locale` starts with `ja`. Load `@kubohiroya/turbowarp-plus-editor-windows/styles.css` as a global stylesheet.
 
