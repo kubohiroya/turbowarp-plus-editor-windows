@@ -22,7 +22,7 @@ TurboWarp Plus Editor のページ内に浮かぶ窓、そのタイトルバー�
 
 | export | 役割 |
 | --- | --- |
-| `./surfaces` | 内容をドックから別窓などの表示先へ移す遷移（ドック・初期化中・外部表示）。準備ができるまでドックを残し、切断やエラーで戻す。表示先の記録と復旧、未反映の編集の回収も持つ。ブラウザー・Electron・GUI には依存しない |
+| `./surfaces` | 内容をドックから別窓などの表示先へ移す遷移（ドック・初期化中・外部表示）。準備ができるまでドックを残し、切断やエラーで戻す。表示先の記録と復旧、未反映の編集の回収も持つ。ブラウザー・Electron・GUI には依存しない。`createBrowserHost(parent, show, page?, detachOpener?, synchronousPageHide?)` は、ブラウザーの別窓・別タブに表示するときの host。チケット付きの受け渡しの後でページに `MessagePort` を渡し、どちらかの窓が閉じる・子が別のページに移ると、その理由とともに切断する |
 | `./transfer` | 窓をまたぐコピーの転送参照を作り、型・版・セッション・転送ID・期限を照合して、一度だけ適用する。参照にはデータ本体や読み込みURLを入れない |
 | `./opener-document` | `connectOpenerDocument(child, {opener, mirrorNewStyles})` は、別窓の document を、そこへ描画するエディターの document に結ぶ。別窓でのマウス・タッチの入力をエディターの document でも発生させ、React 16 が別窓ですべてのイベントを受けるようにし、別窓で開いたコンテキストメニューを開いている間だけ別窓に表示する。別窓で作ったキャンバスをエディターの `instanceof HTMLCanvasElement` に通し、指定すれば後からエディターに加わったスタイルを写す。戻り値の関数で切り離す |
 
