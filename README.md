@@ -28,6 +28,8 @@ Windows that float inside the TurboWarp Plus Editor page, their title bars, and 
 
 Labels are in English, or in Japanese when `locale` starts with `ja`. Load `@kubohiroya/turbowarp-plus-editor-windows/styles.css` as a global stylesheet.
 
+The stylesheet also sets the backdrop behind GUI dialogs (`--ui-modal-overlay`) to a translucent dark tone, `rgba(0, 0, 0, 0.4)`, in place of the accent fill of the GUI's light theme. Set `--tw-modal-overlay` on `:root` to choose another colour.
+
 React 16.14 or later is supported, because the Editor mounts these components in the GUI's React 16.
 
 ## Verification

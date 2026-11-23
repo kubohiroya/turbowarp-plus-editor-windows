@@ -350,3 +350,14 @@
 .tw-plus-dialog-actions > button[data-dialog-action="delete"] {
     --tw-plus-dialog-action-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round' d='M3 4.5h10M6 4.5V3h4v1.5m-6 0 .8 8.5h6.4l.8-8.5M7 7v3.5M9 7v3.5'/%3E%3C/svg%3E");
 }
+
+/*
+ * Dialog backdrop. The GUI's light theme sets --ui-modal-overlay to the accent
+ * colour at 90% opacity as an inline style on <html>, which hides the project
+ * behind a flat accent fill. Override it with a quiet translucent dark tone in
+ * both themes; !important is needed to win over the inline style. A host can
+ * pick another colour with --tw-modal-overlay.
+ */
+:root {
+    --ui-modal-overlay: var(--tw-modal-overlay, rgba(0, 0, 0, 0.4)) !important;
+}
