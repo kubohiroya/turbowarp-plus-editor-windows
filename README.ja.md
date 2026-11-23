@@ -28,6 +28,8 @@ TurboWarp Plus Editor のページ内に浮かぶ窓、そのタイトルバー�
 
 表示は英語で、`locale` が `ja` で始まるときは日本語。`@kubohiroya/turbowarp-plus-editor-windows/styles.css` をグローバルなスタイルシートとして読み込む。
 
+このスタイルシートは、GUI のダイアログの背後（`--ui-modal-overlay`）も、GUI のライトテーマのアクセント色の塗りに代えて、半透明の暗色 `rgba(0, 0, 0, 0.4)` にする。別の色にするときは `:root` に `--tw-modal-overlay` を指定する。
+
 Editor は GUI の React 16 にこれらを描画するので、React 16.14 以降に対応する。
 
 ## 検証
