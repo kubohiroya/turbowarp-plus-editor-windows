@@ -1,6 +1,6 @@
 {
   "name": "@kubohiroya/turbowarp-plus-editor-windows",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "In-page windows, title bars, menus, dialog actions, external surfaces and transfers for TurboWarp Plus Editor",
   "type": "module",
   "license": "MPL-2.0",
